@@ -1784,11 +1784,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Coach\\GitHub\\Playwright-NUnit-CSharp\\PlayWrightCSharp.csproj",
+      "projectUniqueName": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\PlayWrightCSharp.csproj",
       "projectName": "PlayWrightCSharp",
-      "projectPath": "C:\\Users\\Coach\\GitHub\\Playwright-NUnit-CSharp\\PlayWrightCSharp.csproj",
+      "projectPath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\PlayWrightCSharp.csproj",
       "packagesPath": "C:\\Users\\Coach\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Coach\\GitHub\\Playwright-NUnit-CSharp\\obj\\",
+      "outputPath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

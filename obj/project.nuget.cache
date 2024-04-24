@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VdQZDETSSQZYdWx7leL8lTfEbE6UwP5w8CuxWRhKNVlMb4cyVwke3gAy2H+O3p+34d6dN2uzFCjisCKP7d+2Iw==",
+  "dgSpecHash": "OSTh7pzuQUaecvAzQdTv4YUv21bwmEs51xj0SBXhPINvqwRCNwagwEI+HE/VMpdXLw/+EvNPz+IMkzaqc5vLfQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Coach\\GitHub\\Playwright-NUnit-CSharp\\PlayWrightCSharp.csproj",
+  "projectFilePath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\PlayWrightCSharp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Coach\\.nuget\\packages\\coverlet.collector\\6.0.1\\coverlet.collector.6.0.1.nupkg.sha512",
     "C:\\Users\\Coach\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",

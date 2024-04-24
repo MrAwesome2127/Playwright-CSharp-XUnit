@@ -7,11 +7,13 @@ public class PlaywrightDriver
     private readonly Task<IBrowser> _browser;
     private readonly Task<IBrowserContext> _browserContext;
     private readonly TestSettings _testSettings;
+    private readonly IPlaywrightDriverInitializer _playwrightDriverInitializer;
     private readonly Task<IPage> _page;
 
-    public PlaywrightDriver(TestSettings testSettings)
+    public PlaywrightDriver(TestSettings testSettings, IPlaywrightDriverInitializer playwrightDriverInitializer)
     {
         _testSettings = testSettings;
+        _playwrightDriverInitializer = playwrightDriverInitializer;
         _browser = Task.Run(InitializePlaywright);
         _browserContext = Task.Run(CreateBrowserContext);
         _page = Task.Run(CreatePageAsync);
@@ -19,10 +21,18 @@ public class PlaywrightDriver
 
     public IPage Page => _page.Result;
     public IBrowser Browser => _browser.Result;
+    public IBrowserContext BrowserContext => _browserContext.Result;
 
     private async Task<IBrowser> InitializePlaywright()
     {
-        return await GetBrowser(_testSettings);
+        return _testSettings.DriverType switch
+        {
+            DriverType.Chromium => await _playwrightDriverInitializer.GetChromiumDriver(_testSettings),
+            DriverType.Chrome => await _playwrightDriverInitializer.GetChromeDriver(_testSettings),
+            DriverType.Edge => await _playwrightDriverInitializer.GetEdgeDriver(_testSettings),
+            DriverType.Firefox => await _playwrightDriverInitializer.GetFirefoxDriver(_testSettings),
+            _ => await _playwrightDriverInitializer.GetChromiumDriver(_testSettings)
+        };
     }
 
     private async Task<IBrowserContext> CreateBrowserContext()
@@ -33,26 +43,5 @@ public class PlaywrightDriver
     private async Task<IPage> CreatePageAsync()
     {
         return await (await _browserContext).NewPageAsync();
-    }
-
-    private async Task<IBrowser> GetBrowser(TestSettings testSettings)
-    {
-        var playwrightDriver = await Playwright.CreateAsync();
-
-        var browserOption = new BrowserTypeLaunchOptions
-        {
-            Channel = testSettings.Channel,
-            Headless = testSettings.Headless,
-            SlowMo = testSettings.SlowMo
-        };
-
-        return testSettings.DriverType switch
-        {
-            DriverType.Chromium => await playwrightDriver.Chromium.LaunchAsync(browserOption),
-            DriverType.Chrome => await playwrightDriver["chrome"].LaunchAsync(browserOption),
-            DriverType.Edge => await playwrightDriver.Chromium.LaunchAsync(browserOption),
-            DriverType.Firefox => await playwrightDriver.Firefox.LaunchAsync(browserOption),
-            _ => await playwrightDriver.Chromium.LaunchAsync(browserOption)
-        };
     }
 }

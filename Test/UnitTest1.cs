@@ -6,19 +6,19 @@ namespace PlayWrightCSharp.Test;
 public class Tests
 {
     private PlaywrightDriver _driver;
+    private PlaywrightDriverInitializer _playwrightDriverInitializer;
 
     [SetUp]
     public async Task Setup()
     {
         TestSettings testSettings = new TestSettings
         {
-            Channel = "chrome",
             Headless = false,
             SlowMo = 1500,
             DriverType = DriverType.Chromium
         };
-
-        _driver = new PlaywrightDriver(testSettings);
+        _playwrightDriverInitializer = new PlaywrightDriverInitializer();
+        _driver = new PlaywrightDriver(testSettings, _playwrightDriverInitializer);
         await _driver.Page.GotoAsync("http://www.nintendo.com");
     }
 
