@@ -6,6 +6,7 @@ Playwright is ASYNC codebase.
 Sync vs. Async
 <li> Async is multi-thread, which means operations or programs can run in parallel. Sync is a single-thread, so only one operation or program will run at a time. Async is non-blocking, which means it will send multiple requests to a server. </li>
 
+<br />
 
 Install:
 Playwright Browser Drivers:
