@@ -6,17 +6,16 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "PlayWrightCSharp/1.0.0": {
+      "Playwright-Framework/1.0.0": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "17.9.0",
           "Microsoft.Playwright": "1.43.0",
-          "Playwright-Framework": "1.0.0",
           "coverlet.collector": "6.0.0",
           "xunit": "2.7.1",
           "xunit.runner.visualstudio": "2.5.8"
         },
         "runtime": {
-          "PlayWrightCSharp.dll": {}
+          "Playwright-Framework.dll": {}
         }
       },
       "coverlet.collector/6.0.0": {},
@@ -375,21 +374,11 @@
           }
         }
       },
-      "xunit.runner.visualstudio/2.5.8": {},
-      "Playwright-Framework/1.0.0": {
-        "dependencies": {
-          "Microsoft.NET.Test.Sdk": "17.9.0",
-          "Microsoft.Playwright": "1.43.0",
-          "xunit": "2.7.1"
-        },
-        "runtime": {
-          "Playwright-Framework.dll": {}
-        }
-      }
+      "xunit.runner.visualstudio/2.5.8": {}
     }
   },
   "libraries": {
-    "PlayWrightCSharp/1.0.0": {
+    "Playwright-Framework/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -540,11 +529,6 @@
       "sha512": "sha512-ZJTm71neOfZcUnqdyY0A0Qgcg1162DoOq6+VpCCsOaD9rwCK5alcjOEHeu17sEekzq4qNv3kyelx6lUMsAt/eA==",
       "path": "xunit.runner.visualstudio/2.5.8",
       "hashPath": "xunit.runner.visualstudio.2.5.8.nupkg.sha512"
-    },
-    "Playwright-Framework/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

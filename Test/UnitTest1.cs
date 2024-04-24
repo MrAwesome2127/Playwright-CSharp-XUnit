@@ -1,15 +1,15 @@
-using PlayWrightCSharp.Config;
-using PlayWrightCSharp.Driver;
+using Playwright_Automation_Framework.Config;
+using Playwright_Automation_Framework.Driver;
 
 namespace PlayWrightCSharp.Test;
 
-public class Tests
+public class Tests : IClassFixture<PlaywrightDriverInitializer>
 {
     private PlaywrightDriver _driver;
     private PlaywrightDriverInitializer _playwrightDriverInitializer;
 
-    [SetUp]
-    public async Task Setup()
+    
+    public Tests(PlaywrightDriverInitializer playwrightDriverInitializer)
     {
         TestSettings testSettings = new TestSettings
         {
@@ -17,24 +17,16 @@ public class Tests
             SlowMo = 1500,
             DriverType = DriverType.Chromium
         };
-        _playwrightDriverInitializer = new PlaywrightDriverInitializer();
+        _playwrightDriverInitializer = playwrightDriverInitializer;
         _driver = new PlaywrightDriver(testSettings, _playwrightDriverInitializer);
     }
 
-    [Test]
+    [Fact]
     public async Task Test()
     {
         var page = await _driver.Page;
         await page.GotoAsync("http://www.nintendo.com");
         await page.ClickAsync("text = Search");
-    }
-
-    [TearDown]
-    public async Task TearDown()
-    {
-        var browser = await _driver.Browser;
-        await browser.CloseAsync();
-        await browser.DisposeAsync();
     }
 
 //    [Test]
