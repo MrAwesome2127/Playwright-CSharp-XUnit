@@ -19,20 +19,22 @@ public class Tests
         };
         _playwrightDriverInitializer = new PlaywrightDriverInitializer();
         _driver = new PlaywrightDriver(testSettings, _playwrightDriverInitializer);
-        await _driver.Page.GotoAsync("http://www.nintendo.com");
     }
 
     [Test]
     public async Task Test()
     {
-        await _driver.Page.ClickAsync("text = Search");
+        var page = await _driver.Page;
+        await page.GotoAsync("http://www.nintendo.com");
+        await page.ClickAsync("text = Search");
     }
 
     [TearDown]
     public async Task TearDown()
     {
-        await _driver.Browser.CloseAsync();
-        await _driver.Browser.DisposeAsync();
+        var browser = await _driver.Browser;
+        await browser.CloseAsync();
+        await browser.DisposeAsync();
     }
 
 //    [Test]

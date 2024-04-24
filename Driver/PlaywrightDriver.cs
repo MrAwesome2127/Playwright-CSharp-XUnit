@@ -4,24 +4,24 @@ namespace PlayWrightCSharp.Driver;
 
 public class PlaywrightDriver
 {
-    private readonly Task<IBrowser> _browser;
-    private readonly Task<IBrowserContext> _browserContext;
+    private readonly AsyncTask<IBrowser> _browser;
+    private readonly AsyncTask<IBrowserContext> _browserContext;
     private readonly TestSettings _testSettings;
     private readonly IPlaywrightDriverInitializer _playwrightDriverInitializer;
-    private readonly Task<IPage> _page;
+    private readonly AsyncTask<IPage> _page;
 
     public PlaywrightDriver(TestSettings testSettings, IPlaywrightDriverInitializer playwrightDriverInitializer)
     {
         _testSettings = testSettings;
         _playwrightDriverInitializer = playwrightDriverInitializer;
-        _browser = Task.Run(InitializePlaywright);
-        _browserContext = Task.Run(CreateBrowserContext);
-        _page = Task.Run(CreatePageAsync);
+        _browser =          new AsyncTask<IBrowser>(InitializePlaywright);
+        _browserContext =   new AsyncTask<IBrowserContext>(CreateBrowserContext);
+        _page =             new AsyncTask<IPage>(CreatePageAsync);
     }
 
-    public IPage Page => _page.Result;
-    public IBrowser Browser => _browser.Result;
-    public IBrowserContext BrowserContext => _browserContext.Result;
+    public Task<IPage> Page => _page.Value;
+    public Task<IBrowser> Browser => _browser.Value;
+    public Task<IBrowserContext> BrowserContext => _browserContext.Value;
 
     private async Task<IBrowser> InitializePlaywright()
     {
