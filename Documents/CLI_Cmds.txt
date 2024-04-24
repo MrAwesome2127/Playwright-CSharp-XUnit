@@ -1,0 +1,10 @@
+﻿CLI commands:
+
+# Record:
+	pwsh ./playwright.ps1 codegen <<Website>>
+	# Navigate to the playwright.ps1 location:
+	# 1. cd C:\Users\Coach\GitHub\Playwright-NUnit-CSharp\bin\Debug\net8.0
+	# 2. pwsh ./playwright.ps1 codegen https://nintendo.com
+
+# Headed execution:
+	Set HEADED=1 <--NOT WORKING
