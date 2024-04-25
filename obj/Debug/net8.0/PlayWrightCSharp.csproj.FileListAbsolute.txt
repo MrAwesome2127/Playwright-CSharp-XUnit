@@ -1219,3 +1219,4 @@ C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\obj\Debug\net8.0\refint\PlayWright
 C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\obj\Debug\net8.0\PlayWrightCSharp.pdb
 C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\obj\Debug\net8.0\PlayWrightCSharp.genruntimeconfig.cache
 C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\obj\Debug\net8.0\ref\PlayWrightCSharp.dll
+C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\bin\Debug\net8.0\appsettings.json

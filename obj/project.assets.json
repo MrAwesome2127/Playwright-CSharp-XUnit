@@ -1590,8 +1590,8 @@
     },
     "Playwright-Framework/1.0.0": {
       "type": "project",
-      "path": "../Playwright-Automation_Framework/Playwright-Framework.csproj",
-      "msbuildProject": "../Playwright-Automation_Framework/Playwright-Framework.csproj"
+      "path": "../Playwright-Framework/Playwright-Framework.csproj",
+      "msbuildProject": "../Playwright-Framework/Playwright-Framework.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1636,8 +1636,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Coach\\GitHub\\Playwright-Automation_Framework\\Playwright-Framework.csproj": {
-              "projectPath": "C:\\Users\\Coach\\GitHub\\Playwright-Automation_Framework\\Playwright-Framework.csproj"
+            "C:\\Users\\Coach\\GitHub\\Playwright-Framework\\Playwright-Framework.csproj": {
+              "projectPath": "C:\\Users\\Coach\\GitHub\\Playwright-Framework\\Playwright-Framework.csproj"
             }
           }
         }
