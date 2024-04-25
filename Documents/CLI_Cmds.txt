@@ -1,10 +1,9 @@
 ﻿CLI commands:
 
-# Record:
+# Playwright Record:
+	This feature is similar to Selenium IDE. It locates elements by ARIA (Accessible Rich Internet Applications).
+	cd C:\<Path to Project>\<Project Name>\bin\Debug\net8.0
 	pwsh ./playwright.ps1 codegen <<Website>>
 	# Navigate to the playwright.ps1 location:
-	# 1. cd C:\Users\Coach\GitHub\Playwright-NUnit-CSharp\bin\Debug\net8.0
+	# 1. cd C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\bin\Debug\net8.0
 	# 2. pwsh ./playwright.ps1 codegen https://nintendo.com
-
-# Headed execution:
-	Set HEADED=1 <--NOT WORKING
