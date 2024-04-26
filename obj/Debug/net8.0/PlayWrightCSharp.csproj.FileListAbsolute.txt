@@ -1220,3 +1220,6 @@ C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\obj\Debug\net8.0\PlayWrightCSharp.
 C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\obj\Debug\net8.0\PlayWrightCSharp.genruntimeconfig.cache
 C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\obj\Debug\net8.0\ref\PlayWrightCSharp.dll
 C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\bin\Debug\net8.0\appsettings.json
+C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\bin\Debug\net8.0\AutoFixture.dll
+C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\bin\Debug\net8.0\AutoFixture.Xunit2.dll
+C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\bin\Debug\net8.0\Fare.dll
