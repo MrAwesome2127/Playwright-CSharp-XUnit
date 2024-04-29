@@ -7,3 +7,6 @@
 	# Navigate to the playwright.ps1 location:
 	# 1. cd C:\Users\Coach\GitHub\Playwright-CSharp-NUnit\bin\Debug\net8.0
 	# 2. pwsh ./playwright.ps1 codegen https://nintendo.com
+
+# Running Tests
+	dotnet test 

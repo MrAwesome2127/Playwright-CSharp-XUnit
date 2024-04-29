@@ -18,10 +18,12 @@ public class Product_Page : IProduct_Page
 
     #region Locators
     private ILocator _btnAddToCart => _page.GetByRole(AriaRole.Button, new() { Name = "Add to cart" });
+    private ILocator _btnDirectDownload => _page.GetByRole(AriaRole.Link, new() { Name = "Direct download" });
     #endregion
 
     public async Task AddToCart_PhysicalCopy(string product_name)
     {
+        await Assertions.Expect(_btnDirectDownload).ToBeVisibleAsync();
         await _page.GetByText("Physical" + product_name, new() { Exact = true }).ClickAsync();
         await _page.WaitForSelectorAsync("Add to cart");
         await Assertions.Expect(_btnAddToCart).ToBeVisibleAsync();

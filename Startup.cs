@@ -24,6 +24,5 @@ public class Startup
             .AddScoped<IAddToCart_Page, AddToCart_Page>()
             .AddScoped<ICheckout_Page, Checkout_Page>()
             ;
-
     }
 }

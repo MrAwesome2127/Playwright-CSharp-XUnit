@@ -14,7 +14,7 @@ public class Tests
     private readonly IAddToCart_Page _addToCart_Page;
     private readonly ICheckout_Page _checkout_Page;
 
-    public Tests(ITestFixture testFixture, IPlaywrightDriver playwrightDriver, TestSettings testSettings, IHome_Page home_Page, IProduct_Page product_Page, IAddToCart_Page addToCart_Page, ICheckout_Page checkout_Page)
+    public Tests(ITestFixture testFixture, IHome_Page home_Page, IProduct_Page product_Page, IAddToCart_Page addToCart_Page, ICheckout_Page checkout_Page)
     {
         _testFixture = testFixture;
         _home_Page = home_Page;
@@ -30,12 +30,15 @@ public class Tests
         await _testFixture.NavigateToURL();
 
         //Act
-        await _home_Page.SearchForThisProduct("Games", "The Legend of Zelda™: Tears of the Kingdom";
+        await _home_Page.SearchForThisProduct("Games", "The Legend of Zelda™: Tears of the Kingdom");
+        await _testFixture.TakeScreenShot("C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Results");
+
         await _product_Page.AddToCart_PhysicalCopy("The Legend of Zelda™: Tears of the Kingdom");
         await _addToCart_Page.ViewCart("The Legend of Zelda™: Tears of the Kingdom", "$69.99");
 
         //Assert
         await _checkout_Page.ValidateCartInformation("The Legend of Zelda™: Tears of the Kingdom", "$69.99");
+        await _testFixture.TakeScreenShot("C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Results");
     }
 
     [Theory] //In-line Data Driven
@@ -48,11 +51,14 @@ public class Tests
 
         //Act
         await _home_Page.SearchForThisProduct(product_category, product_name);
+        await _testFixture.TakeScreenShot("C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Results");
+
         await _product_Page.AddToCart_PhysicalCopy(product_name);
         await _addToCart_Page.ViewCart(product_name, price);
 
         //Assert
         await _checkout_Page.ValidateCartInformation(product_name, price);
+        await _testFixture.TakeScreenShot("C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Results");
     }
 
     //If you are creating data for the same fields and do not want to concrete your data, use below! Autofixture will randomize the data every time you execute!
