@@ -1,19 +1,26 @@
-﻿namespace PlayWrightCSharp.Pages;
+﻿using Playwright_Automation_Framework.Driver;
 
-public class Checkout_Page
+namespace PlayWrightCSharp.Pages;
+
+public interface ICheckout_Page
+{
+    Task ValidateCartInformation(string product_name, string price);
+}
+
+public class Checkout_Page : ICheckout_Page
 {
     private readonly IPage _page;
 
-    public Checkout_Page(IPage page)
+    public Checkout_Page(IPlaywrightDriver playwrightDriver)
     {
-        _page = page;
+        _page = playwrightDriver.Page.Result;
     }
 
     #region Locators
-        private ILocator _txtBanner_FreeShipping => _page.GetByText("Congratulations you've qualified for free shipping!").Nth(1);
-        private ILocator _txtGameTitle => _page.Locator("a").Filter(new() { HasText = "The Legend of Zelda™: Tears of the Kingdom" }).Nth(2);
-        private ILocator _txtFreeShipping => _page.GetByText("ShippingFree");
-        private ILocator _btnLoginToCheckout => _page.GetByRole(AriaRole.Button, new() { Name = "Proceed to secure checkout" });
+    private ILocator _txtBanner_FreeShipping => _page.GetByText("Congratulations you've qualified for free shipping!").Nth(1);
+    private ILocator _txtGameTitle => _page.Locator("a").Filter(new() { HasText = "The Legend of Zelda™: Tears of the Kingdom" }).Nth(2);
+    private ILocator _txtFreeShipping => _page.GetByText("ShippingFree");
+    private ILocator _btnLoginToCheckout => _page.GetByRole(AriaRole.Button, new() { Name = "Proceed to secure checkout" });
     #endregion
 
     public async Task ValidateCartInformation(string product_name, string price)

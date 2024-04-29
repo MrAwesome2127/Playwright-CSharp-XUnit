@@ -1,41 +1,41 @@
-using AutoFixture.Xunit2;
 using Playwright_Automation_Framework.Config;
 using Playwright_Automation_Framework.Driver;
+using PlayWrightCSharp.Fixtures;
 using PlayWrightCSharp.Model;
 using PlayWrightCSharp.Pages;
 
 namespace PlayWrightCSharp.Test;
 
-public class Tests : IClassFixture<PlaywrightDriverInitializer>
+public class Tests
 {
-    private readonly PlaywrightDriver _driver;
-    private readonly PlaywrightDriverInitializer _playwrightDriverInitializer;
-    private readonly TestSettings _testSettings;
+    private readonly ITestFixture _testFixture;
+    private readonly IHome_Page _home_Page;
+    private readonly IProduct_Page _product_Page;
+    private readonly IAddToCart_Page _addToCart_Page;
+    private readonly ICheckout_Page _checkout_Page;
 
-    public Tests(PlaywrightDriverInitializer playwrightDriverInitializer)
+    public Tests(ITestFixture testFixture, IPlaywrightDriver playwrightDriver, TestSettings testSettings, IHome_Page home_Page, IProduct_Page product_Page, IAddToCart_Page addToCart_Page, ICheckout_Page checkout_Page)
     {
-        _testSettings = ConfigReader.ReadConfig();
-        _playwrightDriverInitializer = playwrightDriverInitializer;
-        _driver = new PlaywrightDriver(_testSettings, _playwrightDriverInitializer);
+        _testFixture = testFixture;
+        _home_Page = home_Page;
+        _product_Page = product_Page;
+        _addToCart_Page = addToCart_Page;
+        _checkout_Page = checkout_Page;
     }
 
     [Fact]
     public async Task AddToCart_Game_LegendOfZelda()
     {
-        var page = await _driver.Page;
-        await page.GotoAsync(_testSettings.ApplicationURL);
+        //Arrange
+        await _testFixture.NavigateToURL();
 
-        Home_Page home_Page = new Home_Page(page);
-        await home_Page.SearchForThisProduct("Games", "The Legend of Zelda™: Tears of the Kingdom";
+        //Act
+        await _home_Page.SearchForThisProduct("Games", "The Legend of Zelda™: Tears of the Kingdom";
+        await _product_Page.AddToCart_PhysicalCopy("The Legend of Zelda™: Tears of the Kingdom");
+        await _addToCart_Page.ViewCart("The Legend of Zelda™: Tears of the Kingdom", "$69.99");
 
-        Product_Page product_Page = new Product_Page(page);
-        await product_Page.AddToCart_PhysicalCopy("The Legend of Zelda™: Tears of the Kingdom");
-
-        AddToCart_Page addToCart_Page = new AddToCart_Page(page);
-        await addToCart_Page.ViewCart("The Legend of Zelda™: Tears of the Kingdom", "$69.99");
-
-        Checkout_Page checkout_Page = new Checkout_Page(page);
-        await checkout_Page.ValidateCartInformation("The Legend of Zelda™: Tears of the Kingdom", "$69.99");
+        //Assert
+        await _checkout_Page.ValidateCartInformation("The Legend of Zelda™: Tears of the Kingdom", "$69.99");
     }
 
     [Theory] //In-line Data Driven
@@ -43,20 +43,16 @@ public class Tests : IClassFixture<PlaywrightDriverInitializer>
     [InlineData("Games", "The Legend of Zelda™: Tears of the Kingdom", "$69.99")]
     public async Task AddToCart_Game_LegendOfZelda_InlineDataDriven(string product_category, string product_name, string price)
     {
-        var page = await _driver.Page;
-        await page.GotoAsync(_testSettings.ApplicationURL);
+        //Arrange
+        await _testFixture.NavigateToURL();
 
-        Home_Page home_Page = new Home_Page(page);
-        await home_Page.SearchForThisProduct(product_category, product_name);
+        //Act
+        await _home_Page.SearchForThisProduct(product_category, product_name);
+        await _product_Page.AddToCart_PhysicalCopy(product_name);
+        await _addToCart_Page.ViewCart(product_name, price);
 
-        Product_Page product_Page = new Product_Page(page);
-        await product_Page.AddToCart_PhysicalCopy(product_name);
-
-        AddToCart_Page addToCart_Page = new AddToCart_Page(page);
-        await addToCart_Page.ViewCart(product_name, price);
-
-        Checkout_Page checkout_Page = new Checkout_Page(page);
-        await checkout_Page.ValidateCartInformation(product_name, price);
+        //Assert
+        await _checkout_Page.ValidateCartInformation(product_name, price);
     }
 
     //If you are creating data for the same fields and do not want to concrete your data, use below! Autofixture will randomize the data every time you execute!
@@ -68,9 +64,9 @@ public class Tests : IClassFixture<PlaywrightDriverInitializer>
     //    var page = await _driver.Page;
     //    await page.GotoAsync(_testSettings.ApplicationURL);
 
-        // await <POM>.<POM Method>(createRandomUser.username);
-        // await <POM>.<POM Method>(createRandomUser.password);
-        // await <POM>.<POM Method>(createRandomUser.first_name);
-        // await <POM>.<POM Method>(createRandomUser.last_name);
+    // await <POM>.<POM Method>(createRandomUser.username);
+    // await <POM>.<POM Method>(createRandomUser.password);
+    // await <POM>.<POM Method>(createRandomUser.first_name);
+    // await <POM>.<POM Method>(createRandomUser.last_name);
     //}
 }

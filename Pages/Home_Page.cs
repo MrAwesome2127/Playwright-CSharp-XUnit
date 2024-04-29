@@ -1,12 +1,19 @@
-﻿namespace PlayWrightCSharp.Pages;
+﻿using Playwright_Automation_Framework.Driver;
 
-public class Home_Page
+namespace PlayWrightCSharp.Pages;
+
+public interface IHome_Page
+{
+    Task SearchForThisProduct(string product_category, string product_name);
+}
+
+public class Home_Page : IHome_Page
 {
     private readonly IPage _page;
 
-    public Home_Page(IPage page)
+    public Home_Page(IPlaywrightDriver playwrightDriver)
     {
-        _page = page;
+        _page = playwrightDriver.Page.Result;
     }
 
     #region Locators

@@ -1,16 +1,23 @@
-﻿namespace PlayWrightCSharp.Pages;
+﻿using Playwright_Automation_Framework.Driver;
 
-public class AddToCart_Page
+namespace PlayWrightCSharp.Pages;
+
+public interface IAddToCart_Page
+{
+    Task ViewCart(string product_name, string price);
+}
+
+public class AddToCart_Page : IAddToCart_Page
 {
     private readonly IPage _page;
 
-    public AddToCart_Page(IPage page)
+    public AddToCart_Page(IPlaywrightDriver playwrightDriver)
     {
-        _page = page;
+        _page = playwrightDriver.Page.Result;
     }
 
     #region Locators
-        private ILocator _btnViewCartCheckout => _page.GetByRole(AriaRole.Link, new() { Name = "View cart and check out" });
+    private ILocator _btnViewCartCheckout => _page.GetByRole(AriaRole.Link, new() { Name = "View cart and check out" });
     #endregion
 
     public async Task ViewCart(string product_name, string price)
