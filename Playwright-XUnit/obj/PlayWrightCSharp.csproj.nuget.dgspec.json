@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Playwright-XUnit\\PlayWrightCSharp.csproj": {}
+    "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-XUnit\\Playwright-XUnit\\PlayWrightCSharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Playwright-Framework\\Playwright-Framework.csproj": {
+    "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-XUnit\\Playwright-Framework\\Playwright-Framework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Playwright-Framework\\Playwright-Framework.csproj",
+        "projectUniqueName": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-XUnit\\Playwright-Framework\\Playwright-Framework.csproj",
         "projectName": "Playwright-Framework",
-        "projectPath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Playwright-Framework\\Playwright-Framework.csproj",
+        "projectPath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-XUnit\\Playwright-Framework\\Playwright-Framework.csproj",
         "packagesPath": "C:\\Users\\Coach\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Playwright-Framework\\obj\\",
+        "outputPath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-XUnit\\Playwright-Framework\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -98,14 +98,14 @@
         }
       }
     },
-    "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Playwright-XUnit\\PlayWrightCSharp.csproj": {
+    "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-XUnit\\Playwright-XUnit\\PlayWrightCSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Playwright-XUnit\\PlayWrightCSharp.csproj",
+        "projectUniqueName": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-XUnit\\Playwright-XUnit\\PlayWrightCSharp.csproj",
         "projectName": "PlayWrightCSharp",
-        "projectPath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Playwright-XUnit\\PlayWrightCSharp.csproj",
+        "projectPath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-XUnit\\Playwright-XUnit\\PlayWrightCSharp.csproj",
         "packagesPath": "C:\\Users\\Coach\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Playwright-XUnit\\obj\\",
+        "outputPath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-XUnit\\Playwright-XUnit\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -126,8 +126,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Playwright-Framework\\Playwright-Framework.csproj": {
-                "projectPath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Playwright-Framework\\Playwright-Framework.csproj"
+              "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-XUnit\\Playwright-Framework\\Playwright-Framework.csproj": {
+                "projectPath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-XUnit\\Playwright-Framework\\Playwright-Framework.csproj"
               }
             }
           }

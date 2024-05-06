@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlayWrightCSharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+255543c8e984b3ddd0da688543cf9b3b0d3e6047")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+614bf98aa5f5b6e3207a6aa0ec5db01fdbb7f7bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlayWrightCSharp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlayWrightCSharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

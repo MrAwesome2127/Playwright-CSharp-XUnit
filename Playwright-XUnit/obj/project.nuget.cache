@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kxe/TSIhsGFcoTKe1lgHJcsA3X8mu4728bFxS+oNpp/yhuvm/YR94SiQnYttm+v4Ia+cKfJI2QGTZHwsDdUzDA==",
+  "dgSpecHash": "uFDz7NCn4+TbfMHE2DeJ4uqQggWqi/9ZwwpvDM+098yUmENWIw90veZQPM3tQZ5IY/DZLaHBJua+0UQq8wybXw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-NUnit\\Playwright-XUnit\\PlayWrightCSharp.csproj",
+  "projectFilePath": "C:\\Users\\Coach\\GitHub\\Playwright-CSharp-XUnit\\Playwright-XUnit\\PlayWrightCSharp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Coach\\.nuget\\packages\\autofixture\\4.18.1\\autofixture.4.18.1.nupkg.sha512",
     "C:\\Users\\Coach\\.nuget\\packages\\autofixture.xunit2\\4.18.1\\autofixture.xunit2.4.18.1.nupkg.sha512",
