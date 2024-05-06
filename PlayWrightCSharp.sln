@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayWrightCSharp", "PlayWrightCSharp.csproj", "{AE28CE5C-A0CB-44D6-B32D-FC3150D00EA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayWrightCSharp", "..\Playwright-CSharp-NUnit\Playwright-XUnit\PlayWrightCSharp.csproj", "{AE28CE5C-A0CB-44D6-B32D-FC3150D00EA5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playwright-Framework", "..\Playwright-Framework\Playwright-Framework.csproj", "{CEB70A43-6B21-42D4-B5DD-7E5352EB08B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playwright-Framework", "..\Playwright-CSharp-NUnit\Playwright-Framework\Playwright-Framework.csproj", "{CEB70A43-6B21-42D4-B5DD-7E5352EB08B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaywrightCSharp_SpecFlow", "..\Playwright-SpecFlow\PlaywrightCSharp_SpecFlow.csproj", "{1CD33077-0418-425B-8C80-BFC08300B2C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaywrightCSharp_SpecFlow", "..\Playwright-CSharp-NUnit\Playwright-SpecFlow\PlaywrightCSharp_SpecFlow.csproj", "{1CD33077-0418-425B-8C80-BFC08300B2C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
